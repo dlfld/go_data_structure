@@ -12,8 +12,7 @@ type Stack struct {
 
 // NewStack /**  获取一个栈实例
 func NewStack() *Stack {
-	stack := &Stack{}
-	stack.size = -1
+	stack := &Stack{size: -1}
 	return stack
 }
 
@@ -24,7 +23,7 @@ func (stack *Stack) Top() interface{} {
 
 // IsEmpty /** 判断栈内元素是否为空
 func (stack *Stack) IsEmpty() bool {
-	if stack.size == -1 {
+	if stack == nil || stack.size == -1 {
 		return true
 	}
 	return false
